@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notícias G1</title>
+    
+    <!-- Inclua os arquivos CSS do Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Notícias do G1</h1>
+
+        <div class="noticias">
+            {% for noticia in noticias %}
+                <div class="media mt-4">
+                    {% if noticia.imagem_url %}
+                        <img src="{{ noticia.imagem_url }}" class="mr-3" alt="{{ noticia.titulo }}">
+                    {% endif %}
+                    <div class="media-body">
+                        <h2 class="mt-0">{{ noticia.titulo }}</h2>
+                        <p><a href="{{ noticia.link }}" target="_blank">Leia mais</a></p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Inclua os arquivos JavaScript do Bootstrap (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.5.
